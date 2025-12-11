@@ -1,0 +1,162 @@
+[gd_scene load_steps=14 format=3 uid="uid://be86pn737k8hw"]
+
+[ext_resource type="Texture2D" uid="uid://ft4rnr524pdy" path="res://ghblau.png" id="1_qotq7"]
+[ext_resource type="Texture2D" uid="uid://c465sm31n6yql" path="res://ghgelb.png" id="2_ne406"]
+[ext_resource type="Texture2D" uid="uid://lomj3ra755qg" path="res://ghgrün.png" id="3_u7ycw"]
+[ext_resource type="Texture2D" uid="uid://c4ju64hmi616b" path="res://ghrot.png" id="4_7fpkb"]
+[ext_resource type="Script" uid="uid://dixb0rrelvr55" path="res://Pointstext.gd" id="6_u7ycw"]
+[ext_resource type="Script" uid="uid://dx88rqoe48e60" path="res://conductor.gd" id="10_02lqx"]
+[ext_resource type="Texture2D" uid="uid://bn7dfj0alrnen" path="res://abstract-surface-textures-white-concrete-stone-wall.jpg" id="10_48o3u"]
+[ext_resource type="AudioStream" uid="uid://dqqkbo6n81mut" path="res://Freebird.mp3" id="10_d12qv"]
+[ext_resource type="Script" uid="uid://do8q7mvixa6mv" path="res://Ratingtext.gd" id="10_mepep"]
+[ext_resource type="Texture2D" uid="uid://c5j2je6kx4y55" path="res://OLIERJ0.jpg" id="11_mepep"]
+[ext_resource type="Texture2D" uid="uid://7usr2l3w8u4b" path="res://silver_metal_background_1.jpg" id="12_oct47"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ne406"]
+font_size = 40
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mepep"]
+font_size = 66
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ghblau" type="Sprite2D" parent="."]
+position = Vector2(604, 761)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qotq7")
+
+[node name="Ghgelb" type="Sprite2D" parent="."]
+position = Vector2(444, 761)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ne406")
+
+[node name="Ghrot" type="Sprite2D" parent="."]
+position = Vector2(277, 761)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_7fpkb")
+
+[node name="Ghgrün" type="Sprite2D" parent="."]
+position = Vector2(115, 761)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_u7ycw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Points" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("point")]
+offset_left = 6.0
+offset_top = 15.0
+offset_right = 171.0
+offset_bottom = 70.0
+text = "Points: 0"
+label_settings = SubResource("LabelSettings_ne406")
+script = ExtResource("6_u7ycw")
+point = NodePath(".")
+
+[node name="Rating" type="Node2D" parent="CanvasLayer" node_paths=PackedStringArray("perfect", "good", "missed")]
+script = ExtResource("10_mepep")
+perfect = NodePath("Perfect")
+good = NodePath("Good")
+missed = NodePath("Missed")
+
+[node name="Perfect" type="Label" parent="CanvasLayer/Rating"]
+clip_contents = true
+offset_left = 12.0
+offset_top = 103.0
+offset_right = 145.0
+offset_bottom = 194.0
+text = "PERFECT!!!"
+label_settings = SubResource("LabelSettings_mepep")
+
+[node name="Good" type="Label" parent="CanvasLayer/Rating"]
+clip_contents = true
+offset_left = 12.0
+offset_top = 103.0
+offset_right = 145.0
+offset_bottom = 194.0
+text = "GOOD"
+label_settings = SubResource("LabelSettings_mepep")
+
+[node name="Missed" type="Label" parent="CanvasLayer/Rating"]
+clip_contents = true
+offset_left = 12.0
+offset_top = 103.0
+offset_right = 145.0
+offset_bottom = 194.0
+text = "MISSED"
+label_settings = SubResource("LabelSettings_mepep")
+
+[node name="Background" type="Node2D" parent="."]
+show_behind_parent = true
+scale = Vector2(1e-05, 1e-05)
+
+[node name="string" type="Sprite2D" parent="Background"]
+position = Vector2(1.14e+07, 4.1e+07)
+scale = Vector2(174.925, 29999)
+texture = ExtResource("10_48o3u")
+
+[node name="string2" type="Sprite2D" parent="Background"]
+position = Vector2(2.73e+07, 4.13e+07)
+scale = Vector2(174.925, 29999)
+texture = ExtResource("10_48o3u")
+
+[node name="string3" type="Sprite2D" parent="Background"]
+position = Vector2(4.43e+07, 4.15e+07)
+scale = Vector2(174.925, 29999)
+texture = ExtResource("10_48o3u")
+
+[node name="string4" type="Sprite2D" parent="Background"]
+position = Vector2(6.06e+07, 4.13e+07)
+scale = Vector2(174.925, 29999)
+texture = ExtResource("10_48o3u")
+
+[node name="Olierj0" type="Sprite2D" parent="Background"]
+show_behind_parent = true
+position = Vector2(3.57e+07, 3.81e+07)
+scale = Vector2(67906.6, 61484.8)
+texture = ExtResource("11_mepep")
+
+[node name="SilverMetalBackground1" type="Sprite2D" parent="Background"]
+position = Vector2(4.05e+07, 1.05e+07)
+rotation = -1.5708
+scale = Vector2(291.36, -19148)
+texture = ExtResource("12_oct47")
+
+[node name="SilverMetalBackground2" type="Sprite2D" parent="Background"]
+position = Vector2(3.94e+07, 3.46e+07)
+rotation = -1.5708
+scale = Vector2(291.36, -19148)
+texture = ExtResource("12_oct47")
+
+[node name="SilverMetalBackground3" type="Sprite2D" parent="Background"]
+position = Vector2(3.78e+07, 5.75e+07)
+rotation = -1.5708
+scale = Vector2(291.36, -19148)
+texture = ExtResource("12_oct47")
+
+[node name="SilverMetalBackground4" type="Sprite2D" parent="Background"]
+position = Vector2(3.94e+07, 8.12e+07)
+rotation = -1.5708
+scale = Vector2(291.36, -19148)
+texture = ExtResource("12_oct47")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." node_paths=PackedStringArray("music_player")]
+stream = ExtResource("10_d12qv")
+script = ExtResource("10_02lqx")
+music_player = NodePath(".")
+is_recording = null
+
+[node name="SpawnerGrün" type="Node2D" parent="AudioStreamPlayer2D"]
+position = Vector2(115, -103)
+
+[node name="SpawnerRot" type="Node2D" parent="AudioStreamPlayer2D"]
+position = Vector2(277, -103)
+
+[node name="SpawnerGelb" type="Node2D" parent="AudioStreamPlayer2D"]
+position = Vector2(444, -103)
+
+[node name="SpawnerBlau" type="Node2D" parent="AudioStreamPlayer2D"]
+position = Vector2(604, -103)

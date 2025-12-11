@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://o5ainek71712"]
+
+[ext_resource type="Script" uid="uid://dax6svlb2123f" path="res://pgelb.gd" id="1_05gxa"]
+[ext_resource type="Texture2D" uid="uid://cbvw3vq86d8xj" path="res://pfeilgelb.png" id="1_22nd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fn7cg"]
+
+[node name="PfeilGelb" type="Node2D"]
+script = ExtResource("1_05gxa")
+
+[node name="Pfeilblau" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_22nd6")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(6, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fn7cg")
