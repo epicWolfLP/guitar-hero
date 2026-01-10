@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ryevc1u0w6ps"
+path="res://.godot/imported/Cupid's Chokehold snippet.mp3-c6a642dc3e54cc2eafc2ed8d853b1491.mp3str"
+
+[deps]
+
+source_file="res://Cupid's Chokehold snippet.mp3"
+dest_files=["res://.godot/imported/Cupid's Chokehold snippet.mp3-c6a642dc3e54cc2eafc2ed8d853b1491.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

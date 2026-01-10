@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfqifeuc3mm1k"]
+
+[ext_resource type="Script" uid="uid://dc6v1epto6g6w" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://douvnmvwtq0vs" path="res://Guitar Hero.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://7lfhc0rqhy2s" path="res://Guitar Hero bg.png" id="2_nlkkf"]
+[ext_resource type="Script" uid="uid://d1pbqy2bd2asb" path="res://music.gd" id="3_glbon"]
+[ext_resource type="AudioStream" uid="uid://cpl68bflopy1o" path="res://vintage-posters.mp3" id="3_jix8l"]
+[ext_resource type="AudioStream" uid="uid://jdxcmtfj2oxv" path="res://sunlight.mp3" id="4_glbon"]
+
+[node name="main-menu" type="Node2D"]
+script = ExtResource("1_06t4h")
+
+[node name="GuitarHeroBg" type="Sprite2D" parent="."]
+position = Vector2(348.5, 425.5)
+scale = Vector2(0.506429, 0.505294)
+texture = ExtResource("2_nlkkf")
+
+[node name="Start" type="Button" parent="."]
+offset_left = 221.0
+offset_top = 323.0
+offset_right = 451.0
+offset_bottom = 391.0
+text = "Levels"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 224.0
+offset_top = 447.0
+offset_right = 454.0
+offset_bottom = 511.0
+text = "Quit"
+
+[node name="GuitarHero" type="Sprite2D" parent="."]
+position = Vector2(351, 155)
+scale = Vector2(0.337037, 0.337037)
+texture = ExtResource("2_7vrkn")
+
+[node name="Music" type="Node2D" parent="."]
+script = ExtResource("3_glbon")
+
+[node name="Song1" type="AudioStreamPlayer2D" parent="Music"]
+stream = ExtResource("3_jix8l")
+
+[node name="Song2" type="AudioStreamPlayer2D" parent="Music"]
+stream = ExtResource("4_glbon")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="Music/Song1" to="Music" method="_on_song_1_finished"]
+[connection signal="finished" from="Music/Song2" to="Music" method="_on_song_2_finished"]

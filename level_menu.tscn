@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://bil3gm3uvhb6s"]
+
+[ext_resource type="Script" uid="uid://camv8m6bw04q4" path="res://level_menu.gd" id="1_krrsl"]
+[ext_resource type="Texture2D" uid="uid://cuk5508d102q4" path="res://level button idle.png" id="2_lnidy"]
+[ext_resource type="Texture2D" uid="uid://dabh70s6o484v" path="res://level menu.png" id="2_w32vy"]
+[ext_resource type="Texture2D" uid="uid://cejjdf4abb6s" path="res://level button pressed.png" id="3_w32vy"]
+[ext_resource type="Texture2D" uid="uid://kyxhekm5wqi1" path="res://level button hover.png" id="4_gd4f1"]
+[ext_resource type="AudioStream" uid="uid://bfr082mumkkyj" path="res://California Dreamin snippet.mp3" id="5_lnidy"]
+[ext_resource type="Texture2D" uid="uid://bgjjol1wmerrw" path="res://level button 2 idle.png" id="6_y1rhc"]
+[ext_resource type="Texture2D" uid="uid://worbb1nqbvgd" path="res://level button 2 pressed.png" id="7_wj7nf"]
+[ext_resource type="Texture2D" uid="uid://dnxuw7lncf47a" path="res://level button 2 hover.png" id="8_65nq4"]
+[ext_resource type="AudioStream" uid="uid://ryevc1u0w6ps" path="res://Cupid's Chokehold snippet.mp3" id="10_wj7nf"]
+
+[node name="level menu" type="Node2D"]
+script = ExtResource("1_krrsl")
+
+[node name="LevelMenu" type="Sprite2D" parent="."]
+position = Vector2(349.5, 425.107)
+scale = Vector2(0.510714, 0.510714)
+texture = ExtResource("2_w32vy")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 99.0
+offset_top = 81.0
+offset_right = 562.0
+offset_bottom = 293.0
+texture_normal = ExtResource("2_lnidy")
+texture_pressed = ExtResource("3_w32vy")
+texture_hover = ExtResource("4_gd4f1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 99.0
+offset_top = 326.405
+offset_right = 562.0
+offset_bottom = 538.405
+texture_normal = ExtResource("6_y1rhc")
+texture_pressed = ExtResource("7_wj7nf")
+texture_hover = ExtResource("8_65nq4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lnidy")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_wj7nf")
+volume_db = 0.42
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="TextureButton2" to="." method="_on_texture_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton2" to="." method="_on_texture_button_2_mouse_exited"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

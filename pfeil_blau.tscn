@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://by5jxy66n0sag"]
+
+[ext_resource type="Script" uid="uid://b80w1u8nsfcee" path="res://pblau.gd" id="1_fn7cg"]
+[ext_resource type="Texture2D" uid="uid://dxeie6wuhpoyl" path="res://pfeilblau.png" id="1_tuatl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fn7cg"]
+
+[node name="PfeilBlau" type="Node2D"]
+script = ExtResource("1_fn7cg")
+
+[node name="Pfeilblau" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_tuatl")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(6, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fn7cg")
