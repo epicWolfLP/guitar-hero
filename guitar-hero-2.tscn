@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bov5xpbads63"]
+[gd_scene load_steps=16 format=3 uid="uid://bov5xpbads63"]
 
 [ext_resource type="Texture2D" uid="uid://ft4rnr524pdy" path="res://ghblau.png" id="1_p1awn"]
 [ext_resource type="Texture2D" uid="uid://c465sm31n6yql" path="res://ghgelb.png" id="2_6jlam"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://lomj3ra755qg" path="res://ghgrün.png" id="4_umavo"]
 [ext_resource type="Script" uid="uid://dixb0rrelvr55" path="res://Pointstext.gd" id="5_1ddpg"]
 [ext_resource type="Script" uid="uid://do8q7mvixa6mv" path="res://Ratingtext.gd" id="6_6f8k1"]
+[ext_resource type="PackedScene" uid="uid://mt1shltt3odw" path="res://pause_menu.tscn" id="7_6jlam"]
 [ext_resource type="Texture2D" uid="uid://bn7dfj0alrnen" path="res://abstract-surface-textures-white-concrete-stone-wall.jpg" id="7_xoxqf"]
 [ext_resource type="Texture2D" uid="uid://c5j2je6kx4y55" path="res://OLIERJ0.jpg" id="8_35few"]
+[ext_resource type="PackedScene" uid="uid://2yhw4lgic0uu" path="res://score_screen.tscn" id="8_fagc1"]
 [ext_resource type="Texture2D" uid="uid://7usr2l3w8u4b" path="res://silver_metal_background_1.jpg" id="9_ahtgf"]
 [ext_resource type="AudioStream" uid="uid://nhf6y8a1f1au" path="res://Cupid's Chokehold.mp3" id="10_p1awn"]
 [ext_resource type="Script" uid="uid://c1fv2l1ehldks" path="res://main-2.gd" id="11_p1awn"]
@@ -52,7 +54,7 @@ offset_left = 6.0
 offset_top = 15.0
 offset_right = 171.0
 offset_bottom = 70.0
-text = "Points: 0"
+text = "Score: 0"
 label_settings = SubResource("LabelSettings_ne406")
 script = ExtResource("5_1ddpg")
 point = NodePath(".")
@@ -89,6 +91,14 @@ offset_right = 145.0
 offset_bottom = 194.0
 text = "MISSED"
 label_settings = SubResource("LabelSettings_mepep")
+
+[node name="Pause Menu" parent="CanvasLayer" groups=["Pause"] instance=ExtResource("7_6jlam")]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = -2.0
+
+[node name="Score Screen" parent="CanvasLayer" instance=ExtResource("8_fagc1")]
 
 [node name="Background" type="Node2D" parent="."]
 show_behind_parent = true
@@ -149,7 +159,7 @@ stream = ExtResource("10_p1awn")
 volume_db = -0.165
 script = ExtResource("11_p1awn")
 music_player = NodePath(".")
-music_offset_seconds = -0.8
+music_offset_seconds = -0.83
 
 [node name="SpawnerGrün" type="Node2D" parent="AudioStreamPlayer2D"]
 position = Vector2(115, -103)

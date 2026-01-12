@@ -9,6 +9,7 @@ var pfeil_blau = preload("res://pfeil_blau.tscn")
 @onready var spawner_rot = get_node("SpawnerRot")
 @onready var spawner_gelb = get_node("SpawnerGelb")
 @onready var spawner_blau = get_node("SpawnerBlau")
+@onready var endtimer = $Timer2
 
 @export var music_player: AudioStreamPlayer2D
 @export var music_offset_seconds: float = -0.985
@@ -155,3 +156,9 @@ func load_map(filename):
 			print("Konnte Datei nicht lesen.")
 	else:
 		print("Keine Speicherdatei gefunden (noch keine Aufnahme gemacht?).")
+
+func _on_finished() -> void:
+	endtimer.start()
+
+func _on_timer_2_timeout() -> void:
+	pass # Replace with function body.

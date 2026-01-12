@@ -11,7 +11,7 @@ var pfeil_blau = preload("res://pfeil_blau.tscn")
 @onready var spawner_blau = get_node("SpawnerBlau")
 
 @export var music_player: AudioStreamPlayer2D
-@export var music_offset_seconds: float = -0.985
+@export var music_offset_seconds: float = -0.8
 
 var map_data = [] 
 
